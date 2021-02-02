@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Javascript Clock UI Dark</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="wavy.css" />
+    <link rel="stylesheet" href="./public/css/style.css">
+    <link rel="icon" href="./images/logo-icon.png"/>
+    
+
+  
+
+    <link rel="stylesheet" type="text/css" href="style_menu.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"/>
+
+    <link rel="javascript" href="javascript.js" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+    </style>
+
+    <!--CONFIG JAVACLOCK-->
+
+    <div class="wavy">
+      <span style="--i: 1">J</span>
+      <span style="--i: 2">A</span>
+      <span style="--i: 3">V</span>
+      <span style="--i: 4">A</span>
+      <span style="--i: 5">C</span>
+      <span style="--i: 6">L</span>
+      <span style="--i: 7">O</span>
+      <span style="--i: 8">C</span>
+      <span style="--i: 9">K</span>
+      
+      
+    </div>
+  </head>
+
+  <body>
+    <div class="clock">
+        <div class="hour">
+          <div class="hr" id="hr"></div>
+        </div>
+  
+        <div class="min">
+          <div class="mn" id="mn"></div>
+        </div>
+  
+        <div class="sec">
+          <div class="sc" id="sc"></div>
+        </div>
+      </div>
+  
+      <!--CONFIG JAVA SCRIPT RELÓGIO-->
+  
+      <script type="text/javascript">
+        const deg = 6;
+        const hr = document.querySelector("#hr");
+        const mn = document.querySelector("#mn");
+        const sc = document.querySelector("#sc");
+  
+        setInterval(() => {
+          let day = new Date();
+          let hh = day.getHours() * 30;
+          let mm = day.getMinutes() * deg;
+          let ss = day.getSeconds() * deg;
+  
+          hr.style.transform = `rotateZ(${hh + mm / 12}deg)`;
+          mn.style.transform = `rotateZ(${mm}deg)`;
+          sc.style.transform = `rotateZ(${ss}deg)`;
+        });
+      </script>
+  </body>
+
+</html>
